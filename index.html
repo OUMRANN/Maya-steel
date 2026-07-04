@@ -12,17 +12,17 @@
 
 <style>
   :root{
-    --steel-black:#15181B;
-    --graphite:#20242A;
-    --graphite-2:#2A2F36;
-    --line:#3A414A;
-    --silver:#C3C9CE;
-    --paper:#F2EFE8;
-    --paper-dim:#DEDACF;
-    --teal:#3AA79A;
-    --teal-dim:#2C7F76;
-    --copper:#C2793E;
-    --copper-dim:#8F5A2E;
+    --steel-black:#0B0C0E;
+    --graphite:#121418;
+    --graphite-2:#1A1D24;
+    --line:rgba(214, 175, 55, 0.15);
+    --silver:#A3A8AC;
+    --paper:#EAEAEA;
+    --paper-dim:#A0A5A9;
+    --teal:#D4AF37;
+    --teal-dim:#AA841A;
+    --copper:#E5C158;
+    --copper-dim:#8F7226;
     --ff-display:'Space Grotesk', sans-serif;
     --ff-body:'IBM Plex Sans', sans-serif;
     --ff-mono:'IBM Plex Mono', monospace;
@@ -66,17 +66,18 @@
     font-family:var(--ff-display);
     font-weight:700;
     letter-spacing:-0.01em;
+    color:#FFFFFF;
   }
 
   /* ---------- material swatch strip (signature element) ---------- */
   .swatch-strip{
     display:flex;
-    height:10px;
+    height:3px;
     width:100%;
   }
   .swatch-strip span{flex:1;}
-  .swatch-strip .s1{background:#8B9096;}
-  .swatch-strip .s2{background:#6E97AE;}
+  .swatch-strip .s1{background:#121418;}
+  .swatch-strip .s2{background:#AA841A;}
   .swatch-strip .s3{background:var(--teal);}
   .swatch-strip .s4{background:var(--copper);}
 
@@ -85,7 +86,7 @@
     position:sticky;
     top:0;
     z-index:100;
-    background:rgba(21,24,27,0.92);
+    background:rgba(11,12,14,0.92);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
@@ -125,7 +126,7 @@
     transition:color .2s;
     position:relative;
   }
-  nav.links a:hover{color:var(--paper);}
+  nav.links a:hover{color:var(--teal);}
   .nav-cta{
     display:flex;
     align-items:center;
@@ -146,15 +147,15 @@
   }
   .btn:hover{transform:translateY(-1px);}
   .btn-amber{
-    background:var(--copper);
-    color:#181210;
+    background:var(--teal);
+    color:var(--steel-black);
   }
-  .btn-amber:hover{background:#D3893F;}
+  .btn-amber:hover{background:var(--copper);}
   .btn-outline{
     border-color:var(--line);
     color:var(--paper);
   }
-  .btn-outline:hover{border-color:var(--silver);}
+  .btn-outline:hover{border-color:var(--teal); color:var(--teal);}
 
   .menu-toggle{
     display:none;
@@ -207,7 +208,7 @@
     border-top:1px solid var(--line);
     padding-top:18px;
   }
-  .stars{color:var(--copper);letter-spacing:2px;}
+  .stars{color:var(--teal);letter-spacing:2px;}
   .rating-badge b{color:var(--paper);font-family:var(--ff-body);}
 
   .hero-photo{
@@ -216,33 +217,34 @@
     overflow:hidden;
     aspect-ratio:4/5;
     isolation:isolate;
+    border:1px solid var(--line);
   }
   .hero-photo img{
     width:100%;height:100%;object-fit:cover;
-    filter:saturate(1.05) contrast(1.03);
+    filter:grayscale(20%) contrast(1.05);
   }
   .hero-photo::after{
     content:'';
     position:absolute;inset:0;
-    background:linear-gradient(160deg, rgba(58,167,154,.28), rgba(21,24,27,.15) 45%, rgba(194,121,62,.32));
+    background:linear-gradient(160deg, rgba(214,175,55,.1), rgba(11,12,14,.4) 70%);
     mix-blend-mode:multiply;
   }
   .hero-photo .tag{
     position:absolute;
     bottom:18px;left:18px;
     z-index:2;
-    background:rgba(21,24,27,.78);
+    background:rgba(11,12,14,.85);
     border:1px solid var(--line);
     padding:9px 14px;
     font-family:var(--ff-mono);
     font-size:11px;
-    letter-spacing Ram:.08em;
+    letter-spacing:.08em;
     text-transform:uppercase;
-    color:var(--paper);
+    color:var(--teal);
   }
 
   /* ---------- section shells ---------- */
-  section{padding:96px 0;}
+  section{padding:96px 0; border-bottom:1px solid var(--line);}
   .section-head{
     max-width:640px;
     margin-bottom:52px;
@@ -250,6 +252,7 @@
   .section-head h2{
     font-size:clamp(28px,3.4vw,38px);
     margin-top:14px;
+    color: #FFFFFF;
   }
   .section-head p{
     color:var(--silver);
@@ -257,11 +260,11 @@
     font-size:16px;
   }
   .light{
-    background:var(--paper);
-    color:var(--steel-black);
+    background:var(--graphite);
+    color:var(--paper);
   }
-  .light .eyebrow{color:var(--teal-dim);}
-  .light .section-head p{color:#4B4B45;}
+  .light .eyebrow{color:var(--teal);}
+  .light .section-head p{color:var(--silver);}
 
   /* ---------- about ---------- */
   .about-grid{
@@ -274,11 +277,15 @@
     position:relative;
     border-radius:2px;
     overflow:hidden;
+    border:1px solid var(--line);
   }
   .about-photo img{width:100%;object-fit:cover;}
+  .about-copy h2{
+    color: #FFFFFF;
+  }
   .about-copy p{
     font-size:16px;
-    color:#413F38;
+    color:var(--silver);
     margin-bottom:18px;
     max-width:520px;
   }
@@ -286,21 +293,21 @@
     display:flex;
     gap:40px;
     margin-top:32px;
-    border-top:1px solid #CFCABB;
+    border-top:1px solid var(--line);
     padding-top:28px;
   }
   .stat-row .stat b{
     font-family:var(--ff-display);
     font-size:30px;
     display:block;
-    color:var(--teal-dim);
+    color:var(--teal);
   }
   .stat-row .stat span{
     font-family:var(--ff-mono);
     font-size:11.5px;
     letter-spacing:.05em;
     text-transform:uppercase;
-    color:#6B6858;
+    color:var(--silver);
   }
 
   /* ---------- products ---------- */
@@ -316,18 +323,22 @@
     background:var(--graphite);
     padding:0 0 26px;
     position:relative;
-    transition:background .25s;
+    transition:all .25s ease;
   }
-  .product-card:hover{background:var(--graphite-2);}
+  .product-card:hover{
+    background:var(--graphite-2);
+    box-shadow: inset 0 0 0 1px var(--teal);
+  }
   .product-photo{
     aspect-ratio:1/1;
     overflow:hidden;
+    border-bottom:1px solid var(--line);
   }
   .product-photo img{
     width:100%;height:100%;object-fit:cover;
     transition:transform .5s ease;
   }
-  .product-card:hover .product-photo img{transform:scale(1.06);}
+  .product-card:hover .product-photo img{transform:scale(1.04);}
   .product-body{padding:22px 22px 0;}
   .product-num{
     font-family:var(--ff-mono);
@@ -339,6 +350,7 @@
     font-size:19px;
     margin:10px 0 8px;
     font-family:var(--ff-display);
+    color: #FFFFFF;
   }
   .product-card p{
     font-size:13.5px;
@@ -358,32 +370,32 @@
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:1px;
-    background:#CFCABB;
-    border:1px solid #CFCABB;
+    background:var(--line);
+    border:1px solid var(--line);
   }
   .why-card{
-    background:var(--paper);
+    background:var(--graphite);
     padding:34px 26px;
   }
   .why-card .mark{
     width:34px;height:34px;
-    border:1px solid var(--copper);
+    border:1px solid var(--teal);
     border-radius:50%;
     display:flex;align-items:center;justify-content:center;
     margin-bottom:20px;
   }
   .why-card .mark span{
-    width:8px;height:8px;background:var(--copper);border-radius:50%;
+    width:8px;height:8px;background:var(--teal);border-radius:50%;
   }
   .why-card h3{
     font-size:17px;
-    color:var(--steel-black);
+    color:#FFFFFF;
     margin-bottom:10px;
     font-family:var(--ff-display);
   }
   .why-card p{
     font-size:13.5px;
-    color:#5C5947;
+    color:var(--silver);
   }
   @media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:540px){.why-grid{grid-template-columns:1fr;}}
@@ -408,6 +420,7 @@
   .process-step h3{
     font-size:19px;
     margin-bottom:10px;
+    color: #FFFFFF;
   }
   .process-step p{
     color:var(--silver);
@@ -431,6 +444,7 @@
     font-family:var(--ff-display);
     font-size:56px;
     line-height:1;
+    color: var(--teal);
   }
   .review-badge-card .stars{font-size:20px;margin:14px 0 8px;display:block;}
   .review-badge-card p{
@@ -441,7 +455,7 @@
   .review-quote{
     background:var(--graphite);
     border:1px solid var(--line);
-    border-left:2px solid var(--copper);
+    border-left:2px solid var(--teal);
     padding:26px 28px;
     margin-bottom:16px;
   }
@@ -459,20 +473,20 @@
   }
 
   /* ---------- location ---------- */
-  .location{background:var(--paper);color:var(--steel-black);}
+  .location{background:var(--steel-black);color:var(--paper);}
   .loc-grid{
     display:grid;
     grid-template-columns:.85fr 1.15fr;
     gap:0;
-    border:1px solid #CFCABB;
+    border:1px solid var(--line);
   }
   .loc-info{
-    background:var(--steel-black);
+    background:var(--graphite);
     color:var(--paper);
     padding:44px;
   }
   .loc-info .eyebrow{color:var(--teal);}
-  .loc-info h2{font-size:28px;margin:14px 0 26px;}
+  .loc-info h2{font-size:28px;margin:14px 0 26px;color: #FFFFFF;}
   .loc-item{
     display:flex;
     gap:14px;
@@ -491,13 +505,14 @@
     padding-top:2px;
   }
   .loc-item .v{font-size:15px;color:var(--paper);}
+  .loc-item .v a {color: var(--teal); font-weight: 600;}
   .loc-item .v small{display:block;color:var(--silver);font-size:12.5px;margin-top:4px;}
   .loc-map iframe{
     width:100%;
     height:100%;
     min-height:420px;
     border:0;
-    filter:grayscale(.25) contrast(1.05);
+    filter:invert(90%) hue-rotate(180deg) grayscale(1) contrast(1.2);
   }
 
   @media (max-width:860px){
@@ -507,29 +522,31 @@
 
   /* ---------- final CTA ---------- */
   .cta-band{
-    background:linear-gradient(120deg, var(--teal-dim), var(--copper-dim));
+    background: linear-gradient(135deg, #121418 0%, #0B0C0E 100%);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
     padding:70px 0;
     text-align:center;
   }
   .cta-band h2{
     font-size:clamp(26px,3.6vw,38px);
-    color:#0F1213;
+    color: var(--teal);
     margin-bottom:16px;
   }
   .cta-band p{
-    color:#1B211F;
+    color:var(--silver);
     margin-bottom:28px;
     font-size:15.5px;
   }
   .cta-band .btn-amber{
-    background:#0F1213;
-    color:var(--paper);
+    background:var(--teal);
+    color:var(--steel-black);
   }
-  .cta-band .btn-amber:hover{background:#232A2C;}
+  .cta-band .btn-amber:hover{background:var(--copper);}
 
   /* ---------- footer ---------- */
   footer{
-    background:var(--graphite);
+    background:var(--steel-black);
     padding:56px 0 28px;
     border-top:1px solid var(--line);
   }
@@ -555,7 +572,7 @@
     font-size:14px;
     margin-bottom:10px;
   }
-  .foot-col a:hover{color:var(--paper);}
+  .foot-col a:hover{color:var(--teal);}
   .foot-bottom{
     border-top:1px solid var(--line);
     padding-top:22px;
@@ -565,7 +582,7 @@
     gap:10px;
     font-family:var(--ff-mono);
     font-size:12px;
-    color:#6E757D;
+    color:#555B60;
   }
 
   @media (max-width:860px){
@@ -587,7 +604,7 @@
       z-index:99;
     }
     nav.links.open{transform:translateY(0);}
-    .menu-toggle{display:block;}
+    .menu-toggle{display:block; color: var(--teal);}
     .nav-cta .btn-outline{display:none;}
     .hero-grid{grid-template-columns:1fr;}
     .hero-photo{order:-1;aspect-ratio:16/10;}
@@ -626,7 +643,7 @@
       <a href="#location">Location</a>
     </nav>
     <div class="nav-cta">
-      <a href="tel:+251911222240" class="btn btn-outline btn-amber">Call Now</a>
+      <a href="tel:+251911222240" class="btn btn-outline">Call Now</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
     </div>
   </div>
@@ -640,7 +657,7 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="eyebrow">Construction Material Wholesaler — Addis Ababa</span>
-        <h1 style="font-size: clamp(38px, 5.5vw, 54px); color: #E5C158; margin: 18px 0 22px;">MAYA POLYCARBONATE AND STEEL</h1>
+        <h1 style="font-size: clamp(38px, 5.5vw, 54px); color: var(--teal); margin: 18px 0 22px;">MAYA POLYCARBONATE AND STEEL</h1>
         <p>MAYA supplies contractors, fabricators, and architects across Addis Ababa with graded steel, aluminum, and polycarbonate sheet — cut, sized, and delivered to spec.</p>
         <div class="hero-actions">
           <a href="tel:+251911222240" class="btn btn-amber">Call Now</a>
@@ -662,9 +679,9 @@
       <div class="about-photo" data-reveal>
         <img src="Angle iron.JPG" alt="Angle iron">
         
-        <!-- New text space under the photo with spacing -->
-        <div class="photo-caption" style="margin-top: 15px; margin-bottom: 25px;">
-          <p style="font-size: 16px; line-height: 1.5; color: #333;">
+        <!-- Text space under the photo styled for premium contrast -->
+        <div class="photo-caption" style="margin-top: 20px; margin-bottom: 20px;">
+          <p style="font-size: 15px; line-height: 1.6; color: var(--silver); border-left: 2px solid var(--teal); padding-left: 14px;">
             Directly imported to meet uncompromising structural standards, our ready stock includes premium Angle Iron, RHS, Flat Iron, CHS, LTZ, Steel Metal, and Steel Sheet and etc.
           </p>
         </div>
@@ -672,7 +689,7 @@
       
       <div class="about-copy" data-reveal>
         <span class="eyebrow">About Maya</span>
-        <h2 style="margin-top:14px;font-size:clamp(26px,3.2vw,34px);">A material house built on stock, not promises</h2>
+        <h2 style="margin-top:14px;font-size:clamp(26px,3.2vw,34px); margin-bottom: 18px;">A material house built on stock, not promises</h2>
         <p>MAYA Polycarbonate and Steel operates as a wholesale supplier out of Addis Ababa, holding ready stock of steel, aluminum, and polycarbonate sheet so building sites don't wait on production runs.</p>
         <p>Everything leaves the yard cut to the dimensions on your drawing — whole sheets, custom sizes, or small-batch orders for a single site.</p>
         <div class="stat-row">
@@ -858,13 +875,13 @@
     <div class="wrap">
       <h2>Ready to size your order?</h2>
       <p>Call the yard directly — quotes are usually confirmed the same day.</p>
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
           <a href="tel:+251911222240" class="btn btn-amber">Call +251 91 122 2240</a>
           <a href="tel:+251912203636" class="btn btn-amber">Call +251 91 220 3636</a>
           <a href="tel:+251112317000" class="btn btn-amber">Call +251 11 231 7000</a>  
         </div> 
-        <a href="https://wa.me/251911222240" target="_blank" rel="noopener" style="color: #0F1213; font-family: var(--ff-mono); font-size: 14px; text-decoration: underline;">
+        <a href="https://wa.me/251911222240" target="_blank" rel="noopener" style="color: var(--teal); font-family: var(--ff-mono); font-size: 14px; text-decoration: underline; letter-spacing: 0.05em; margin-top: 8px;">
           WhatsApp: @MAYA STEEL
         </a>
       </div>
